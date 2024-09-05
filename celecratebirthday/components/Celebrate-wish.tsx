@@ -46,7 +46,6 @@ function CelebrateWish() {
   const [celebrating, setCelebrating] = useState<boolean>(false)
   const [birthdayName, setBirthdayName] = useState<string>("Muhammad Inam")
   const [birthdayInputBoolean, setBirthdayInputBoolean] = useState<boolean>(false)
-  const [inputBirthday, setInputBirthday] = useState<string>("")
 
   //total candels and ballon contant;
   const totalCandles: number = 5;
