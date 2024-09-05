@@ -8,11 +8,22 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
+
 import { motion, AnimatePresence } from 'framer-motion'
 import dynamic from 'next/dynamic'
-import { useEffect, useState } from "react"
+import { ChangeEvent, useEffect, useState } from "react"
 import { FaBirthdayCake, FaGift } from 'react-icons/fa'
-import { GiBalloons } from 'react-icons/gi'
+import { GiBalloons } from 'react-icons/gi';
+import { PiCakeDuotone } from "react-icons/pi";
+import { BsBalloon } from "react-icons/bs";
+import { Input } from "./ui/input"
+import { HiArrowPathRoundedSquare } from "react-icons/hi2";
 
 // Type define Confftie
 interface ConfitteType {
@@ -33,6 +44,9 @@ function CelebrateWish() {
   const [showConfitte, setShowConfitte] = useState<boolean>(false)
   const [sizeWindow, setSizeWindow] = useState<ConfitteType>({ width: 0, height: 0 })
   const [celebrating, setCelebrating] = useState<boolean>(false)
+  const [birthdayName, setBirthdayName] = useState<string>("Muhammad Inam")
+  const [birthdayInputBoolean, setBirthdayInputBoolean] = useState<boolean>(false)
+  const [inputBirthday, setInputBirthday] = useState<string>("")
 
   //total candels and ballon contant;
   const totalCandles: number = 5;
@@ -81,6 +95,14 @@ function CelebrateWish() {
   }
 
 
+  const recyleEvent = () => {
+    setCandleList(0)
+    setCountPopBallon(0)
+    setShowConfitte(false)
+    setCelebrating(false)
+    return 
+  }
+
   return (
     <div className="min-h-screen  flex items-center justify-center p-4">
       <motion.div
@@ -91,8 +113,11 @@ function CelebrateWish() {
       >
         <Card className="mx-auto overflow-hidden transition-all duration-300 ease-in-out hover:shadow-xl border-none">
           <CardHeader className="text-center">
-            <CardTitle className="text-4xl font-extrabold text-black">Happy 18th Birthday!</CardTitle>
-            <CardDescription className="text-2xl font-semibold text-gray-700/70">Muhammad Inam</CardDescription>
+            <CardTitle className="text-4xl font-extrabold text-black mb-3">Happy Birthday! </CardTitle>
+            <CardDescription className="text-2xl font-semibold text-gray-700/70 flex items-center justify-center  gap-3">
+            {(birthdayInputBoolean) ? <Input placeholder="Enter Birthday Boy Name" value={birthdayName} onChange={(e) => setBirthdayName(e.target.value)}/> :  (birthdayName)}
+            <Button onClick={() => setBirthdayInputBoolean((prev) => !prev)} >set Name</Button>
+            </CardDescription>
             <p className="text-lg text-gray-500 font-light">December 12</p>
           </CardHeader>
           <CardContent className="space-y-6 text-center">
@@ -109,7 +134,7 @@ function CelebrateWish() {
                         transition={{ duration: 0.5, delay: celebrating ? index * 0.5 : 0 }}
                       >
                         {/* Lit candle */}
-                        <FaBirthdayCake
+                        <PiCakeDuotone 
                           className={`w-8 h-8 transition-colors duration-300 ease-in-out cursor-pointer hover:scale-110`}
                           style={{ color: candleColors[index % candleColors.length] }}
                           onClick={() => ligthingCandle(index)}
@@ -117,7 +142,7 @@ function CelebrateWish() {
                       </motion.div>
                     ) : (
                       // Unlit candle
-                      <FaBirthdayCake
+                      <PiCakeDuotone 
                         className={`w-8 h-8 text-gray-300 transition-colors duration-300 ease-in-out cursor-pointer hover:scale-110`}
                         onClick={() => ligthingCandle(index)}
                       />
@@ -139,7 +164,7 @@ function CelebrateWish() {
                     transition={{ duration: 0.3 }}
                   >
                     {/* Balloon icon */}
-                    <GiBalloons
+                    <BsBalloon
                       className={`w-8 h-8 cursor-pointer hover:scale-110`}
                       style={{ color: index < countPopBalloon ? '#D1D5DB' : balloonColors[index % balloonColors.length] }}
                       onClick={() => popBalloons(index)}
@@ -159,6 +184,18 @@ function CelebrateWish() {
               Celebrate! <FaGift className="ml-2 h-4 w-4" />
             </Button>
           </CardFooter>
+          <div className="flex justify-end items-center">
+            <TooltipProvider>
+              <Tooltip >
+                <TooltipTrigger>
+                <div onClick={recyleEvent} ><HiArrowPathRoundedSquare  className="w-8 h-8 mb-3 mr-3"/></div>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p className="p-2  text-white ">Recycle Event</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          </div>
         </Card>
       </motion.div>
       {/* Confetti component */}
