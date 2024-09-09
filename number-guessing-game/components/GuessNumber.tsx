@@ -3,14 +3,14 @@ import { useState, useEffect, ChangeEvent } from "react";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 
-type NumberGuessingState = {
-  gameStarted: boolean;
-  gameOver: boolean;
-  paused: boolean;
-  targetNumber: number;
-  userGuess: number | string;
-  attempts: number;
-};
+// type NumberGuessingState = {
+//   gameStarted: boolean;
+//   gameOver: boolean;
+//   paused: boolean;
+//   targetNumber: number;
+//   userGuess: number | string;
+//   attempts: number;
+// };
 
 /**
  * The Number Guessing Game component
