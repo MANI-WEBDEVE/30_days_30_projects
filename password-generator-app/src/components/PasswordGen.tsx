@@ -11,9 +11,10 @@ import {
 } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
-import { Checkbox, CheckedState } from "@/components/ui/checkbox";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
+import { CheckedState } from "@radix-ui/react-checkbox";
 
 const PasswordGen = () => {
   const { toast } = useToast();
@@ -21,7 +22,7 @@ const PasswordGen = () => {
   const [includeSpecailChar, setIncludeSpecailChar] = useState<boolean>(true);
   const [includeNumber, setIncludeNumber] = useState<boolean>(true);
   const [includeLowerCase, setIncludeLowerCase] = useState<boolean>(true);
-  const [lengthPass, setLengthPass] = useState<number>(16);
+  const [lengthPass, setLengthPass] = useState<number>(8);
   const [password, setPassword] = useState<string>("");
 
   /**
@@ -71,14 +72,27 @@ const PasswordGen = () => {
         description: "Please check the checkBox",
       });
     }
+    
     let generatedPassword = "";
-    for (let i = 0; i < length; i++) {
+    for (let i = 0; i < lengthPass; i++) {
       let character = Math.floor(Math.random() * allChar.length);
       generatedPassword += allChar[character];
     }
-    console.log(generatedPassword)
     setPassword(generatedPassword);
   };
+
+  const handleCopyPassword = () => {
+    navigator.clipboard.writeText(password);
+    toast({
+      title: "Password Copied",
+      description: "Your password has been copied to your clipboard",
+      style: {
+        color: "white",
+        backgroundColor: "black",
+        border: "1px solid white",
+      }
+    });
+  }
 
   return (
     <div className="flex justify-center items-center w-full h-screen bg-slate-300">
@@ -94,11 +108,11 @@ const PasswordGen = () => {
               onChange={handlePasswordLength}
               placeholder="Password Length"
               type="number"
-              min="8"
-              max="32"
+              minLength= {8}
+              maxLength= {32}
             />
           </div>
-          <div className="space-y-2 grid gap-2">
+          <div className="space-y-2 flex items-start justify-between gap-2  flex-col">
             <Label>Include:</Label>
             <div className="flex items-center justify-center">
               <Checkbox
@@ -130,12 +144,16 @@ const PasswordGen = () => {
             </div>
           
           </div>
-          <Button onClick={handleGeneratedPassword}>Generate Password</Button>
+          <Button onClick={handleGeneratedPassword} className="mt-4">Generate Password</Button>
         </CardContent>
-        <CardFooter>
-            <div>
-                <Input value={password} onChange={handlePasswordVal}/>
-                <Button>Copy ClipBoard</Button>
+        <CardFooter className="grid gap-3 w-full">
+            <div className="flex items-center justify-center gap-4">
+              <div className="w-full">
+                <Input className="" value={password} onChange={handlePasswordVal} placeholder="Generated Password Here"/>
+              </div>
+              <div className="">
+                <Button onClick={() => handleCopyPassword()}>Copy ClipBoard</Button>
+              </div>
             </div>
         </CardFooter>
       </Card>
