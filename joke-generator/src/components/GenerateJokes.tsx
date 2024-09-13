@@ -40,6 +40,7 @@ function GenerateJokes() {
         </div>
         <div>
           <Button className="font-bold px-4 py-3 rounded-xl bg-[#43A147] hover:bg-[#1d802a]" onClick={() => fetchJoke()}>Generate New jOke 🤪</Button>
+          {error && <p>{error}</p>}
         </div>
 
         <p className="text-blue-400 text-center w-full">Developed by <a href="https://github.com/MANI-WEBDEVE" target="_blank">Muhammad Inam</a></p>
