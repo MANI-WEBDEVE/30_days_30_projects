@@ -34,8 +34,8 @@ function BmiCalculate() {
             return;
         } 
 
-        let heigth = parseFloat(heigthInput) / 100 ;
-        let weight = parseFloat(weightInput);
+        const heigth = parseFloat(heigthInput) / 100 ;
+        const weight = parseFloat(weightInput);
 
         if (isNaN(heigth) || isNaN(weight)) {
             setError("please enter the valid number for height and weight")
@@ -89,9 +89,11 @@ function BmiCalculate() {
         </CardHeader>
         <CardContent className="flex justify-center items-center flex-col gap-4">
             <div className="w-full" >
+                <Label htmlFor="heigth">Height</Label>
                 <Input placeholder="Enter Your Height" onChange={handleHeigthInput} value={heigthInput} type="number" />
             </div>
             <div className="w-full">
+                <Label htmlFor="weight">Weight</Label>
                 <Input placeholder="Enter Your Weight" onChange={handleWeigthInput} value={weightInput} type="number"/>
             </div>
             <Button onClick={totalBMI} className="w-full">Calculate BMI</Button>
