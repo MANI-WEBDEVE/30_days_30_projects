@@ -39,7 +39,7 @@ const PasswordGen = () => {
     const passwordVal = event.target.value;
 
     // Set the password state to the value of the input field
-    
+
   };
 
   const handlePasswordLength = (event: ChangeEvent<HTMLInputElement>) => {
@@ -48,14 +48,14 @@ const PasswordGen = () => {
 
   const handleCheckedBox =
     (setter: (value: boolean) => void) =>
-    (checked: CheckedState): void => {
-      if (typeof checked === "boolean") {
-        setter(checked);
-      }
-    };
+      (checked: CheckedState): void => {
+        if (typeof checked === "boolean") {
+          setter(checked);
+        }
+      };
 
   const handleGeneratedPassword = (): void => {
-    
+
     const UpperCaes = "ABCDEFGHIJKLMONPQRSTUVWXYZ";
     const LowerCase = "abcdefghijklmnopqrstuvwxyz";
     const Number = "1234567890";
@@ -72,7 +72,7 @@ const PasswordGen = () => {
         description: "Please check the checkBox",
       });
     }
-    
+
     let generatedPassword = "";
     for (let i = 0; i < lengthPass; i++) {
       let character = Math.floor(Math.random() * allChar.length);
@@ -108,8 +108,8 @@ const PasswordGen = () => {
               onChange={handlePasswordLength}
               placeholder="Password Length"
               type="number"
-              minLength= {8}
-              maxLength= {32}
+              minLength={8}
+              maxLength={32}
             />
           </div>
           <div className="space-y-2 flex items-start justify-between gap-2  flex-col">
@@ -142,19 +142,20 @@ const PasswordGen = () => {
               />
               <Label htmlFor="Number">Include Number</Label>
             </div>
-          
+
           </div>
           <Button onClick={handleGeneratedPassword} className="mt-4">Generate Password</Button>
         </CardContent>
         <CardFooter className="grid gap-3 w-full">
-            <div className="flex items-center justify-center gap-4">
-              <div className="w-full">
-                <Input className="" value={password} onChange={handlePasswordVal} placeholder="Generated Password Here"/>
-              </div>
-              <div className="">
-                <Button onClick={() => handleCopyPassword()}>Copy ClipBoard</Button>
-              </div>
+          <div className="flex items-center justify-center gap-4">
+            <div className="w-full">
+              <Input className="" value={password} onChange={handlePasswordVal} placeholder="Generated Password Here" />
             </div>
+            <div className="">
+              <Button onClick={() => handleCopyPassword()}>Copy ClipBoard</Button>
+            </div>
+          </div>
+            <p className="text-blue-400 text-center w-full">Developed by <a href="https://github.com/MANI-WEBDEVE" target="_blank">Muhammad Inam</a></p>
         </CardFooter>
       </Card>
     </div>

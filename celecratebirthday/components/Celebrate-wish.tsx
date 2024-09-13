@@ -99,7 +99,7 @@ function CelebrateWish() {
     setCountPopBallon(0)
     setShowConfitte(false)
     setCelebrating(false)
-    return 
+    return
   }
 
   return (
@@ -114,8 +114,8 @@ function CelebrateWish() {
           <CardHeader className="text-center">
             <CardTitle className="text-4xl font-extrabold text-black mb-3">Happy Birthday! </CardTitle>
             <CardDescription className="text-2xl font-semibold text-gray-700/70 flex items-center justify-center  gap-3">
-            {(birthdayInputBoolean) ? <Input placeholder="Enter Birthday Boy Name" value={birthdayName} onChange={(e) => setBirthdayName(e.target.value)}/> :  (birthdayName)}
-            <Button onClick={() => setBirthdayInputBoolean((prev) => !prev)} >set Name</Button>
+              {(birthdayInputBoolean) ? <Input placeholder="Enter Birthday Boy Name" value={birthdayName} onChange={(e) => setBirthdayName(e.target.value)} /> : (birthdayName)}
+              <Button onClick={() => setBirthdayInputBoolean((prev) => !prev)} >set Name</Button>
             </CardDescription>
             <p className="text-lg text-gray-500 font-light">December 12</p>
           </CardHeader>
@@ -133,7 +133,7 @@ function CelebrateWish() {
                         transition={{ duration: 0.5, delay: celebrating ? index * 0.5 : 0 }}
                       >
                         {/* Lit candle */}
-                        <PiCakeDuotone 
+                        <PiCakeDuotone
                           className={`w-8 h-8 transition-colors duration-300 ease-in-out cursor-pointer hover:scale-110`}
                           style={{ color: candleColors[index % candleColors.length] }}
                           onClick={() => ligthingCandle(index)}
@@ -141,7 +141,7 @@ function CelebrateWish() {
                       </motion.div>
                     ) : (
                       // Unlit candle
-                      <PiCakeDuotone 
+                      <PiCakeDuotone
                         className={`w-8 h-8 text-gray-300 transition-colors duration-300 ease-in-out cursor-pointer hover:scale-110`}
                         onClick={() => ligthingCandle(index)}
                       />
@@ -187,7 +187,7 @@ function CelebrateWish() {
             <TooltipProvider>
               <Tooltip >
                 <TooltipTrigger>
-                <div onClick={recyleEvent} ><HiArrowPathRoundedSquare  className="w-8 h-8 mb-3 mr-3"/></div>
+                  <div onClick={recyleEvent} ><HiArrowPathRoundedSquare className="w-8 h-8 mb-3 mr-3" /></div>
                 </TooltipTrigger>
                 <TooltipContent>
                   <p className="p-2  text-white ">Recycle Event</p>
@@ -195,6 +195,8 @@ function CelebrateWish() {
               </Tooltip>
             </TooltipProvider>
           </div>
+
+          <CardFooter> <p className="text-blue-400 text-center w-full">Developed by <a href="https://github.com/MANI-WEBDEVE" target="_blank">Muhammad Inam</a></p></CardFooter>
         </Card>
       </motion.div>
       {/* Confetti component */}

@@ -22,7 +22,7 @@ import { Button } from "./ui/button";
 function GuessNumber(): JSX.Element {
   const [gameStarted, setGameStarted] = useState<boolean>(false);
   const [gameOver, setGameOver] = useState<boolean>(false);
-  
+
   const [pausedGame, setPausedGame] = useState<boolean>(false);
   const [targetNumber, setTargetNumber] = useState<number>();
   const [userGuessNumber, setUserGuessNumber] = useState<number | string>("");
@@ -95,16 +95,16 @@ function GuessNumber(): JSX.Element {
             <Button
               onClick={handleStartGame}
               className="bg-gray-900 hover:bg-gray-700 rounded px-4 py-2"
-              >
+            >
               Start Game
-            </Button> 
+            </Button>
           </div>
         )}
         {/* 
           If the game has started and the game is not over, show the input field and the pause button 
           When the user click the pause button, the game will pause and the pause button will change to resume button
         */}
-        {gameStarted && !gameOver && ( 
+        {gameStarted && !gameOver && (
           <div>
             <div className="flex justify-center mb-4">
               {/* 
@@ -180,6 +180,9 @@ function GuessNumber(): JSX.Element {
             </div>
           </div>
         )}
+
+        <p className="text-blue-400 text-center w-full">Developed by <a href="https://github.com/MANI-WEBDEVE" target="_blank">Muhammad Inam</a></p>
+
       </div>
     </div>
   );

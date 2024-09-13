@@ -114,6 +114,8 @@ export default function ColorPicker() {
         <div className="w-full ">
           <Button onClick={copyGridiantColor} className="w-full">Copy Gridiant Color</Button>
         </div>
+        
+        <CardFooter> <p className="text-blue-400 text-center w-full">Developed by <a href="https://github.com/MANI-WEBDEVE" target="_blank">Muhammad Inam</a></p></CardFooter>
       </Card>
     </div>
   );

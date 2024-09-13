@@ -140,6 +140,9 @@ function Calculator() {
                         </div>
                     </div>
                 </CardContent>
+                <CardFooter>
+                    <p className="text-blue-400 text-center w-full">Developed by <a href="https://github.com/MANI-WEBDEVE" target="_blank">Muhammad Inam</a></p>
+                </CardFooter>
             </Card>
         </div>
     );

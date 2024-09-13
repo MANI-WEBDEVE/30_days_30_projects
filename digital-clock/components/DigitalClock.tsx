@@ -49,6 +49,7 @@ function DigitalClock() {
               <CardDescription className="text-center text-sm  mb-4">
                 Display current time in hours, minutes, and seconds.
               </CardDescription>
+              </CardHeader>
               <CardContent className="flex justify-center items-center flex-col">
                 <div className="text-5xl font-bold tracking-tight text-center mt-2">
                   {formattedTime}
@@ -75,7 +76,7 @@ function DigitalClock() {
                   </div>
                 </div>
               </CardContent>
-            </CardHeader>
+           <CardFooter> <p className="text-blue-400 text-center w-full">Developed by <a href="https://github.com/MANI-WEBDEVE" target="_blank">Muhammad Inam</a></p></CardFooter>
           </Card>
         </div>
       </div>
