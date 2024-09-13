@@ -11,8 +11,10 @@ import {
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
 
 function BmiCalculate() {
+  const {toast} =  useToast()
     const [heigthInput, setHeigthInput] = useState<string>("")
     const [weightInput, setWeightInput] = useState<string>("")
     const [totalBmi, setTotalBmi] = useState<string | null>(null);
@@ -63,6 +65,16 @@ function BmiCalculate() {
         
         setTotalBmi(`${totalBMICalculate.toFixed(2)}`)
         setTotalBMICategory(category)
+        toast({
+            title: "Success",
+            description: `Your BMI is calculated successfully & your category is ${category} & your BMI is ${totalBMICalculate.toFixed(2)}`,
+            style: {
+                color: "white",
+                backgroundColor: "black",
+                borderRadius: "5px",
+                border: "1px solid white",
+            }
+        })
         setError("")
     }
 
