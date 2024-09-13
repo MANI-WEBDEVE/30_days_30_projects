@@ -69,7 +69,7 @@ export default function ColorPicker() {
 
   return (
     <div
-      className={`flex flex-col items-center justify-center h-screen  dark:bg-gray-900
+      className={`flex flex-col items-center justify-center h-[120vh]  dark:bg-gray-900
     `}
     style={{ backgroundImage: `linear-gradient(45deg, ${rgb1} 0%, ${rgb2} 25%, ${rgb1} 50%, ${rgb2} 75%, ${rgb2} 50%)` }}
     >
