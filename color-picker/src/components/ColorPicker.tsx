@@ -20,7 +20,7 @@ export default function ColorPicker() {
 
   const hexVal = () => {
     let colors = "#";
-    let hex = "0123456789ABCDEF";
+    const hex = "0123456789ABCDEF";
     for (let i = 0; i < 6; i++) {
       colors += hex[Math.floor(Math.random() * 16)];
     }
