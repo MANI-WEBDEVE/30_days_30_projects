@@ -2,10 +2,10 @@
 import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 
-interface JokeType {
-  setup: string;
-  punchline: string;
-}
+// interface JokeType {
+//   setup: string;
+//   punchline: string;
+// }
 
 function GenerateJokes() {
   const [jokeSetup, setJokeSetup] = useState<string>("");
@@ -16,7 +16,7 @@ function GenerateJokes() {
       const response = await fetch(
         "https://official-joke-api.appspot.com/random_joke"
       );
-      const data: JokeType = await response.json();
+      const data = await response.json();
       const joke = `${data.setup} - ${data.punchline}`;
       setJokeSetup(joke);
 
