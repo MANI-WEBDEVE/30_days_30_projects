@@ -107,7 +107,7 @@ const PomodoroTimer = () => {
     type: SessionType,
     increment: boolean
   ): void => {
-    setState((prevTask: any) => {
+    setState((prevTask: PomodoroStatus) => {
       const durationChange = increment ? 60 : -60;
       if (type === "work") {
         return {
@@ -125,7 +125,7 @@ const PomodoroTimer = () => {
           currentTime:
             prevTask.currentSession === "break"
               ? Math.max(60, prevTask.breakDuration + durationChange)
-              : prevTask.currentTime,
+              : prevTask.currentTimer,
         };
       }
     });
