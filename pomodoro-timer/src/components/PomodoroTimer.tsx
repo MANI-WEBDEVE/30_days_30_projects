@@ -23,6 +23,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
+import Link from "next/link";
 
 //* define the types for the timer status and session type
 type TimerStatus = "idole" | "running" | "paused";
@@ -195,7 +196,7 @@ const PomodoroTimer = () => {
         <div className="p-2  flex items-center justify-center mt-4 " >
           <AlertDialog >
             <AlertDialogTrigger asChild>
-              <Button className="bg-gray-400 font-medium" variant="outline">What is Pomodoro Technique?</Button>
+              <Button className="bg-gray-400 hover:bg-slate-400 font-medium transition-all hover:scale-x-110 duration-300" variant="outline">What is Pomodoro Technique?</Button>
             </AlertDialogTrigger>
             <AlertDialogContent className="w-full max-w-2xl p-4 md:p-6 bg-black text-white">
               <AlertDialogHeader>
@@ -228,13 +229,13 @@ const PomodoroTimer = () => {
                     </strong>
                   </ol>
                   <br />
-                  <Button>
+                  <Button className="text-black bg-purple-600 hover:bg-purple-500 p-2 font-bold transition-all hover:scale-105 duration-500"  >
                     <a
-                      href="https://todoist.com/productivity-methods/pomodoro-technique"
+                      href="https://github.com/MANI-WEBDEVE"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      Click Here to Read more!
+                     My GITHUB
                     </a>
                   </Button>
                 </AlertDialogDescription>
@@ -246,6 +247,7 @@ const PomodoroTimer = () => {
             </AlertDialogContent>
           </AlertDialog>
         </div>
+        <div className="text-center mt-4 font-semibold text-purple-500 "><Link href="https://github.com/MANI-WEBDEVE" target="_blank">Developed by Muhammad Inam</Link></div>
       </Card>
     </div>
   );
