@@ -113,8 +113,7 @@ const PomodoroTimer = () => {
         return {
           ...prevTask,
           workDuration: Math.max(60, prevTask.workDuration + durationChange),
-          currentTimer:
-            prevTask.currentSession === "work"
+          currentTimer: prevTask.currentSession === "work"
               ? Math.max(60, prevTask.workDuration + durationChange)
               : prevTask.currentTimer,
         };
