@@ -47,9 +47,11 @@ const PomodoroTimer = () => {
   });
 
   const timeRef = useRef<NodeJS.Timeout | null>(null);
+
   useEffect(() => {
     if (state.timerStatus === "running" && state.currentTimer > 0) {
       timeRef.current = setInterval(() => {
+        console.log(timeRef)
         setState((prevTask) => ({
           ...prevTask,
           currentTimer: prevTask.currentTimer - 1,
