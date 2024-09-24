@@ -41,7 +41,7 @@ const PomodoroTimer = () => {
   const [state, setState] = useState<PomodoroStatus>({
     workDuration: 25 * 60,
     breakDuration: 5 * 60,
-    currentTimer: 25 * 60,
+    currentTimer: 1 * 2,
     currentSession: "work",
     timerStatus: "idole",
   });
@@ -121,7 +121,7 @@ const PomodoroTimer = () => {
         return {
           ...prevTask,
           breakDuration: Math.max(60, prevTask.breakDuration + durationChange),
-          currentTime:
+          currentTimer:
             prevTask.currentSession === "break"
               ? Math.max(60, prevTask.breakDuration + durationChange)
               : prevTask.currentTimer,
@@ -166,14 +166,14 @@ const PomodoroTimer = () => {
           <Button
             variant="outline"
             size="icon"
-            onClick={() => handleDurationChange("work", false)}
+            onClick={() => handleDurationChange(state.currentSession === "work" ? "work": "break", false)}
           >
             <MinusIcon className="h-6 w-6" />
           </Button>
           <Button
             variant="outline"
             size="icon"
-            onClick={() => handleDurationChange("work", true)}
+            onClick={() => handleDurationChange(state.currentSession === "work" ? "work": "break", true)}
           >
             <PlusIcon className="h-6 w-6" />
           </Button>
