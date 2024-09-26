@@ -9,7 +9,7 @@
 		"lint": "eslint . --ext .ts,.tsx -c .eslintrc.json --fix"
 	},
 	"dependencies": {
-		"@nextui-org/button": "2.0.38",
+		"@nextui-org/button": "^2.0.38",
 		"@nextui-org/card": "^2.0.34",
 		"@nextui-org/code": "2.0.33",
 		"@nextui-org/input": "2.2.5",
@@ -23,6 +23,8 @@
 		"@nextui-org/theme": "2.2.11",
 		"@react-aria/ssr": "3.9.4",
 		"@react-aria/visually-hidden": "3.8.12",
+		"@splinetool/react-spline": "^4.0.0",
+		"@splinetool/runtime": "^1.9.28",
 		"clsx": "2.1.1",
 		"framer-motion": "~11.1.1",
 		"intl-messageformat": "^10.5.0",
