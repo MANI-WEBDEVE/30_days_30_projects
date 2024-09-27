@@ -6,6 +6,7 @@ import { Card, CardBody, CardHeader } from "@nextui-org/card";
 import { Skeleton } from "@nextui-org/skeleton";
 import Image from "next/image";
 import { CalendarIcon, StarIcon } from "lucide-react";
+import { ThreeCom2 } from "../../components/ThreeCom";
 
 type MovieDetails = {
   Title: string;
@@ -56,7 +57,10 @@ function page() {
   };
 
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full flex">
+      <div className="w-[50%]">
+
+      
       <div className="w-1/2 mt-4  flex items-center justify-center gap-5">
         <Input type="email" variant={variants} label="Movie Name" value={searchMovieName} onChange={searchVal}/>
         <Button onClick={handleSearch} variant="ghost" className="mt-4">
@@ -87,7 +91,7 @@ function page() {
         </div>
       )}
       {movieDetails && (
-         <Card className="py-4 w-[280px] mt-6 flex flex-col items-center">
+         <Card className="py-4 w-[280px] mt-5 flex flex-col items-center">
          <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
            <p className="text-tiny uppercase font-bold">
            Genre: <span className="text-default-500">{movieDetails.Genre}</span>
@@ -111,10 +115,15 @@ function page() {
          </CardBody>
        </Card>
       )}
+      </div>
+      <div className="w-[50%] h-[60vh]">
+        <ThreeCom2/>
+      </div>
     </div>
   );
-}
+}  
 
 export default page;
 //https://www.omdbapi.com/?i=tt3896198&apikey=fc7a7a60
 //  `https://www.omdbapi.com/?t=${searchTerm}&apikey=${process.env.NEXT_PUBLIC_OMDB_API_KEY}`
+  

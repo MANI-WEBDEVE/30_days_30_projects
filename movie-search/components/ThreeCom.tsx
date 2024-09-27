@@ -11,6 +11,16 @@ export default function ThreeComp() {
   );
 }
 
+export const ThreeCom2 = () => {
+  return (
+    <main className="h-[88vh] w-full">
+      <Spline
+       scene="https://prod.spline.design/kXh3sU1QMeSNxreI/scene.splinecode"
+      />
+    </main>
+  );
+}
+
 // scene="https://prod.spline.design/kXh3sU1QMeSNxreI/scene.splinecode" 
 // scene="https://prod.spline.design/kkoY0cpiSsSFtLYu/scene.splinecode" 
 
