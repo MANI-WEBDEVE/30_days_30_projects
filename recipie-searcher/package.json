@@ -1,5 +1,5 @@
 {
-  "name": "recipie-finder",
+  "name": "recipie-searcher",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,9 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@nextui-org/button": "^2.0.38",
+    "@nextui-org/react": "^2.4.8",
+    "framer-motion": "^11.11.1",
+    "next": "14.2.13",
     "react": "^18",
-    "react-dom": "^18",
-    "next": "14.2.14"
+    "react-dom": "^18"
   },
   "devDependencies": {
     "typescript": "^5",
@@ -21,6 +24,6 @@
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "eslint": "^8",
-    "eslint-config-next": "14.2.14"
+    "eslint-config-next": "14.2.13"
   }
 }
