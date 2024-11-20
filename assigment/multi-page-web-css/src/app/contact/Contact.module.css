@@ -1,0 +1,39 @@
+.contactpage {
+    display: flex;
+    gap: 2rem;
+    padding:1rem 2rem;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-direction: column;
+}
+.contactHeading h1 {
+    font-size: 3rem;
+}
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1rem 0
+}
+.contactForm input {
+    padding: 0.9rem 4rem 0.9rem 2rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.contactButton {
+    display: flex;
+    justify-content: center;
+  
+}
+.contactButton button {
+    padding: 0.6rem 3rem;
+    border-radius: 10px;
+    border: none;
+    background-color: #66889e;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;  
+    cursor: pointer;
+}

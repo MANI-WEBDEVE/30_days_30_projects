@@ -1,0 +1,77 @@
+.aboutpage {
+    display: flex;
+    gap: 3rem;
+    padding:1.6rem 2rem;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.aboutpage p {
+    font-size: 1.1rem;
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+    color: #374151;
+}
+
+.aboutpage h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: #111827;
+}
+
+.aboutTextContainer {
+    display: flex ;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0.3rem;
+    flex-direction: column;
+}
+.aboutImage > img {
+    border-radius: 20px;
+}
+
+@media screen and (max-width: 981px) {
+    .aboutpage {
+        flex-direction: column-reverse;
+    }
+    .aboutImage > img {
+        width: 600px;
+        height: 200px;
+    }
+    .aboutTextContainer {
+        justify-content: center;
+        align-items: center;
+    }
+    
+}
+@media screen and (max-width: 656px) {
+    .aboutpage {
+        flex-direction: column-reverse;
+    }
+    .aboutImage > img {
+        width: 400px;
+        height: 200px;
+    }
+    .aboutTextContainer {
+        justify-content: center;
+        align-items: center;
+    }
+    
+}
+@media screen and (max-width: 390px) {
+    .aboutpage {
+        flex-direction: column-reverse;
+    }
+    .aboutImage > img {
+        width: 300px;
+        height: 200px;
+    }
+    .aboutTextContainer {
+        justify-content: center;
+        align-items: center;
+    }
+    
+}
