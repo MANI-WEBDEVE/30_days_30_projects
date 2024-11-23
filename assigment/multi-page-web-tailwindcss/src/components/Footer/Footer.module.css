@@ -1,0 +1,23 @@
+.footer {
+    display: flex;
+  
+    align-items: center;
+    justify-content: space-between;
+    margin: 4rem 0;
+    gap: 1rem;
+    width: 100%;
+    padding: 0 2rem;
+}
+
+.footerText h1{
+    font-size: 3rem;
+    font-weight: 900;
+}
+.footerText p{
+    font-size: 0.9rem;
+    font-weight: 100;
+}
+.footerText p span{
+    font-weight: 900;
+
+}
