@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
     <>
       <nav className="flex justify-between items-center px-10 my-6">
-        <div onClick={toggleMenu} className="text-4xl font-bold">
+        <div  className="text-4xl font-bold">
           <Link href={"/"}>
             Desi<span>gn</span>
           </Link>
