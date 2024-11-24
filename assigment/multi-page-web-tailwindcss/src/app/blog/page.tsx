@@ -29,22 +29,22 @@ const page = () => {
 
   return (
     <>
-      <section className={styles.blogsection}>
-        <div className={styles.blogHeading}>
+      <section className="container mx-auto  px-4 py-7 flex items-center flex-col justify-center gap-2">
+        <div className="text-3xl font-bold">
           <h1>Blog List</h1>
         </div>
         <div>
           <ul>
             {blogData.map((blog) => (
-              <li key={blog.id} className={styles.blogList}>
-                <div className={styles.blogContent}>
-                  <h2>{blog.title}</h2>
-                  <p>{blog.description}</p>
+              <li key={blog.id} className="border-b border-black w-[90vw] flex items-center justify-between">
+                <div className="flex gap-10 my-3 items-center justify-start md:items-start md:gap-2  md:my-0 md:flex-col ">
+                  <h2 className="text-xl md:text-2xl font-bold">{blog.title}</h2>
+                  <p className="text-sm md:text-lg font-semibold">{blog.description}</p>
                 </div>
-                <div className={styles.blogImage}>
+                <div className="md:w-[12vw] md:h-[22vw] md:py-6 md:flex hidden">
                   <Image
                     height={160}
-                    width={200}
+                    width={200} 
                     src={blog.image}
                     alt={blog.title}
                   />
