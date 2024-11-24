@@ -13,9 +13,9 @@ const Navbar = () => {
   return (
     <>
       <nav className="flex justify-between items-center px-10 my-6">
-        <div  className="text-4xl font-bold">
+        <div  className="text-4xl font-extrabold">
           <Link href={"/"}>
-            Desi<span>gn</span>
+            Desi<span className="font-thin">gn</span>
           </Link>
         </div>
 

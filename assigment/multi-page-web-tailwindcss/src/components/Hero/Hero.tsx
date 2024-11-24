@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const Hero = () => {
@@ -9,7 +10,7 @@ const Hero = () => {
       sm:my-4 sm:mx-2.5 grid-cols-1">
       
       <div className="h-full w-full  md:w-full flex items-center justify-center">
-        <img 
+        <Image 
           src="https://images.unsplash.com/photo-1731607352247-663df98aa547?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxM3x8fGVufDB8fHx8fA%3D%3D" 
           alt="Hero Image"
           className="md:h-[80%] md:w-[66%] h-[70%] w-[50%]  rounded-[20px] object-cover object-center  "
